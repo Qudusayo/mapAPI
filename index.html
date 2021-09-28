@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Currrent Location on the map</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <h3>My Currrent Location on the map</h3> -->
+    <!--The div element for the map -->
+    <div id='map'></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly&channel=2" async></script> -->
+    <!-- <script src="script.js"></script> -->
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoicXVkdXNheW8iLCJhIjoiY2t1NGFsMTEyMWg3OTJydDkxaGJlM214NSJ9.DkNwK8_ip_1mYYrALOzxqg';
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            center: [3.913594, 7.5338628], // starting position [lng, lat]
+            zoom: 15 // starting zoom
+        });
+        
+                // Set marker options.
+                const destinationMarker = new mapboxgl.Marker({
+                    color: "#FF0000",
+                    draggable: true
+                }).setLngLat([3.913594, 7.5338628])
+                    .addTo(map);
+
+        // Set marker options.
+        const marker = new mapboxgl.Marker({
+            color: "#00FF00",
+            draggable: true
+        }).setLngLat([3.9134, 7.5340])
+            .addTo(map);
+    </script>
+</body>
+
+</html>
